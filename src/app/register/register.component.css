@@ -1,0 +1,10 @@
+
+#regForm{
+    margin-top: 120px;
+}
+
+@media(max-width:985px){
+    #regForm{
+        margin-top: 60px;
+    }
+}
