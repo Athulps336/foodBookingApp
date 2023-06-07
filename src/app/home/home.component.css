@@ -1,0 +1,31 @@
+.navLink{
+    font-size: large;
+    font-weight: bold;
+}
+
+.CarouselImage{
+    width: 50%;
+}
+.logo{
+    width: 50%;
+}
+
+.headLink{
+    text-decoration: none;
+    color: white;
+}
+.headLink:hover{
+    color: goldenrod;
+}
+
+
+
+/* accortion */
+.accordion-item {
+    background-color: transparent;
+  }
+
+  .accordion-header button.accordion-button {
+    color: white;
+    background-color: transparent;
+  }

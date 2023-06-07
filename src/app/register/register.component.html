@@ -28,20 +28,31 @@
 
 </div> -->
 
-<div class="reg-main row" style="overflow-x: hidden;">
+<div class="row mx-auto">
     <div class="col-lg-6 ">
-        <h2 class="text-center mt-5" style="color: darkgoldenrod;">Welcome to our restaurant,</h2>
+        <h2 class="text-center mt-3" style="color: darkgoldenrod;">Welcome to our restaurant,</h2>
         <h4 class="text-center" style="color: darkgoldenrod;"> where every meal is a masterpiece.</h4>
         <img src="https://i.postimg.cc/wvRQRpY6/png-plate-of-food-1400.png" class="ms-4"  width="75%">
     </div>
-    <div class="col-lg-6 text-center">
-        <form  class="ms-3 me-3 mb-5" id="regForm">
+    <div class="col-lg-6 text-center ms-3">
+        <form [formGroup]="registerForm" (ngSubmit)="register()" class="ms-3 me-3 mb-5 regForm">
             <h5 class="mb-4 text-center text-white">Sign Up</h5>
-            <input type="text" class="form-control mt-3" placeholder="Enter Phone Number">
-            <input type="text" class="form-control mt-3" placeholder="Enter Your Name">
-            <input type="password" class="form-control mt-3" placeholder="Enter Password">
-            <input type="password" class="form-control mt-3" placeholder="Enter Confirm Password">
-            <button type="button" class="btn btn-outline-warning mt-4">Sign Up</button>
+            <input formControlName="phone" type="text" class="form-control mt-3" id="ph" name="phn" placeholder="Enter Phone Number">
+            <div *ngIf="(this.registerForm.get('phone')?.errors)&&(this.registerForm.get('phone')?.touched)">
+                <p class="text-danger">Must contain 10 numbers only</p>
+             </div>
+
+            <input formControlName="uname" type="text" class="form-control mt-3" id="uname1" name="userName" placeholder="Enter Your Name">
+            <div *ngIf="(this.registerForm.get('uname')?.errors)&&(this.registerForm.get('uname')?.touched)">
+                <p class="text-danger">Must contain Charactors Only</p>
+             </div>
+
+            <input formControlName="psw" type="password" class="form-control mt-3" id="psw1" name="pswd" placeholder="Enter Password">
+            <div *ngIf="(this.registerForm.get('psw')?.errors)&&(this.registerForm.get('psw')?.touched)">
+                <p class="text-danger">Special Charactors Not Allowed</p>
+             </div>
+
+            <button type="submit" class="btn btn-outline-warning mt-4">Sign Up</button>
         </form> 
     </div>
 </div>
